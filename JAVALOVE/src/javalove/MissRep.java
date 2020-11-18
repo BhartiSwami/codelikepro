@@ -15,16 +15,19 @@ public class MissRep {
 		}
 	}
 	static void MissingRepeatingElee(int arr[],int n) {
-		Arrays.sort(arr);
-		int missing=-1, repeating=-1;
-		for(int i=0;i<n-1;i++) {
-			if(arr[i]==arr[i+1]) {
-				repeating=arr[i];
+		int fr[]=new int[n+1];
+		int missing=-1,repeating=-1;
+		for(int i=0;i<n;i++) {
+			 fr[arr[i]]+=1;
+		}
+		for(int i=0;i<n;i++) {
+			if(fr[i]>1) {
+				repeating=i;
 			}
-			if(arr[i]!=arr[i+1] && arr[i+1]!=arr[i]+1) {
-				missing=arr[i]+1;
+			if(fr[i]==0) {
+				missing=i;
 			}
 		}
-		System.out.println("missing = "+ " "+missing+" "+"Repeating = "+" "+repeating);
+		System.out.println("Missing=" +" "+missing+" "+"Repeating"+" "+repeating);
 	}
 }
