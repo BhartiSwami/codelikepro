@@ -4,8 +4,8 @@ import java.util.*;
 public class RecursionFibonacci {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		int t=sc.nextInt();
-		while(t-->0) {
+		int test=sc.nextInt();
+		while(test-->0) {
 			int n=sc.nextInt();
 			System.out.println(fibo(n));
 		}
